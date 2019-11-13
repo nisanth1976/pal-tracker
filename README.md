@@ -41,3 +41,8 @@ cf domains
 cf check-route <your-route-name> <domain-name>
 e.g. cf check-route pal-tracker-nisanth1976 apps.evans.pal.pivotal.io
 
+CF Console:
+https://login.sys.evans.pal.pivotal.io/login
+
+
+
