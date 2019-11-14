@@ -5,6 +5,8 @@ import io.pivotal.pal.tracker.TimeEntryController;
 import io.pivotal.pal.tracker.TimeEntryRepository;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -18,7 +20,9 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 public class TimeEntryControllerTest {
+
     private TimeEntryRepository timeEntryRepository;
+
     private TimeEntryController controller;
 
     @Before
@@ -39,9 +43,7 @@ public class TimeEntryControllerTest {
             .when(timeEntryRepository)
             .create(any(TimeEntry.class));
 
-
         ResponseEntity response = controller.create(timeEntryToCreate);
-
 
         verify(timeEntryRepository).create(timeEntryToCreate);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
@@ -82,6 +84,8 @@ public class TimeEntryControllerTest {
             new TimeEntry(1L, 123L, 456L, LocalDate.parse("2017-01-08"), 8),
             new TimeEntry(2L, 789L, 321L, LocalDate.parse("2017-01-07"), 4)
         );
+
+
         doReturn(expected).when(timeEntryRepository).list();
 
         ResponseEntity<List<TimeEntry>> response = controller.list();

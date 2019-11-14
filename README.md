@@ -34,6 +34,8 @@ git push --tags
 
 git cherry-pick pipeline-start
 
+https://help.github.com/en/github/extending-github/git-automation-with-oauth-tokens
+
 Check Routes
 ===================
 cf domains
@@ -45,4 +47,9 @@ CF Console:
 https://login.sys.evans.pal.pivotal.io/login
 
 
+CICD
+============
+https://travis-ci.org/
 
+
+Rest tool: Insomnia
