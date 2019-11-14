@@ -6,6 +6,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -98,10 +99,9 @@ public class InMemoryTimeEntryRepositoryTest {
         long userId = 456L;
         TimeEntry created = repo.create(new TimeEntry(projectId, userId, LocalDate.parse("2017-01-08"), 8));
 
-        List<TimeEntry> expected = asList(created);
+        repo.delete(created.getId());
 
-        expected = repo.delete(created.getId());
-        assertThat(expected).isEmpty();
+        assertThat(repo.list()).isEmpty();
     }
 
     @Test
@@ -110,9 +110,9 @@ public class InMemoryTimeEntryRepositoryTest {
 
         long projectId = 123L;
         long userId = 456L;
-        TimeEntry created = repo.create(new TimeEntry(8, projectId, userId, LocalDate.parse("2017-01-08"), 8));
+        TimeEntry created = repo.create(new TimeEntry(1, projectId, userId, LocalDate.parse("2017-01-08"), 8));
 
-        assertThat(created.getId()).isEqualTo(8);
+        assertThat(created.getId()).isEqualTo(1);
 
         repo.delete(created.getId());
 

@@ -50,6 +50,17 @@ public class TimeEntry {
     }
 
     @Override
+    public String toString() {
+        return "TimeEntry{" +
+                "projectId=" + projectId +
+                ", userId=" + userId +
+                ", date=" + date +
+                ", hours=" + hours +
+                ", id=" + id +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof TimeEntry)) return false;

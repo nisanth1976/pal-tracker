@@ -124,7 +124,7 @@ public class TimeEntryControllerTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
-    @Ignore
+    @Test
     public void testDelete() {
         long timeEntryId = 1L;
         ResponseEntity response = controller.delete(timeEntryId);
