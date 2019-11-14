@@ -7,6 +7,7 @@ http://courses.education.pivotal.io/  ## Pivotal eductaion course
 
 WELCOME_MESSAGE=hello ./gradlew bootRun ## To start the application with the property value
 
+cf login -u jossue.j.cervantestorres@jpmchase.com -p d8svkwen
 
 Extras
 =======
