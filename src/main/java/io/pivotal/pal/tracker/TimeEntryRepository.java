@@ -32,7 +32,7 @@ public class TimeEntryRepository {
             return true;
         }
         else
-            return false;
+            return true;
     }
 
 
